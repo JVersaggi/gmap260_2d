@@ -55,18 +55,8 @@ public class player_move_prot : MonoBehaviour
         //Jumping Code
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
         isGrounded = false;
+        Debug.Log(isGrounded);
     }
-
-    //Checks if the player is on the ground
-    //potential mechanics with this
-    /*private void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log("Player has collided with " + col.collider.name);
-        if (col.gameObject.tag == "ground")
-        {
-            isGrounded = true;
-        }
-    }*/
 
     void PlayerRaycast ()
     {
@@ -89,6 +79,7 @@ public class player_move_prot : MonoBehaviour
             //TODO add a timer for destroying the enemy
         }
         //jump off of other blocks
+        //Debug.Log(rayDown.distance);
         if (rayDown != null && rayDown.collider != null && rayDown.distance < distanceToBottomofPlayer && rayDown.collider.tag != "Enemy")
         {
             isGrounded = true;
