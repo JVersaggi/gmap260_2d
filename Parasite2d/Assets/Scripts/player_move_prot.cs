@@ -53,9 +53,12 @@ public class player_move_prot : MonoBehaviour
     void Jump()
     {
         //Jumping Code
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
+        //GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
+        Vector2 PlayerVelo = GetComponent<Rigidbody2D>().velocity;
+        PlayerVelo.y = 5;
+        GetComponent<Rigidbody2D>().velocity = PlayerVelo;
         isGrounded = false;
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
     }
 
     void PlayerRaycast ()
@@ -66,18 +69,8 @@ public class player_move_prot : MonoBehaviour
             Destroy(rayUP.collider.gameObject);
         }
 
-            RaycastHit2D rayDown = Physics2D.Raycast (transform.position, Vector2.down);
-        //bounce off enemies
-        if (rayDown != null && rayDown.collider != null && rayDown.distance < distanceToBottomofPlayer && rayDown.collider.tag == "Enemy")
-        {
-            GetComponent<Rigidbody2D> ().AddForce(Vector2.up * 1000);
-            rayDown.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 200);
-            rayDown.collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 8;
-            rayDown.collider.gameObject.GetComponent<Rigidbody2D>().freezeRotation = false;
-            rayDown.collider.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
-            rayDown.collider.gameObject.GetComponent<EnemyMove>().enabled = false;
-            //TODO add a timer for destroying the enemy
-        }
+        RaycastHit2D rayDown = Physics2D.Raycast (transform.position, Vector2.down);
+        
         //jump off of other blocks
         //Debug.Log(rayDown.distance);
         if (rayDown != null && rayDown.collider != null && rayDown.distance < distanceToBottomofPlayer && rayDown.collider.tag != "Enemy")

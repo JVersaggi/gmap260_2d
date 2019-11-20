@@ -1,5 +1,5 @@
 sceneSetups:
-- path: X:/ClassOf2022/hab79/GMAP/platformer/Prototype/Assets/Scenes/SampleScene.unity
+- path: Assets/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
