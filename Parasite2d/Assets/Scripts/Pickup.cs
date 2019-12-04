@@ -64,7 +64,14 @@ public class Pickup : MonoBehaviour
         {
             pick_up.transform.parent = null;
             pick_up.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            pick_up.transform.position = new Vector2(transform.position.x + 1f, transform.position.y);
+            if (!GetComponent<SpriteRenderer>().flipX)
+            {
+                pick_up.transform.position = new Vector2(transform.position.x + 1.5f, transform.position.y);
+            }
+            else
+            {
+                pick_up.transform.position = new Vector2(transform.position.x - 1.5f, transform.position.y);
+            }
             pick_up.GetComponent<BoxCollider2D>().enabled = true;
             child = null;
             in_range = false;

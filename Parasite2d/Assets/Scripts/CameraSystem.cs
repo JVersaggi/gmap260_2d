@@ -6,9 +6,9 @@ public class CameraSystem : MonoBehaviour
 {
     private GameObject player;
     public float xMin = -1.6f;
-    public float xMax = 24f;
-    public float yMin = 1.2f;
-    public float yMax = 1.2f;
+    public float xMax = 50f;
+    public float yMin = 1f;
+    public float yMax = 1f;
 
     // Start is called before the first frame update
     void Start()

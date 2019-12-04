@@ -42,11 +42,11 @@ public class WebSystem : MonoBehaviour
         Vector2 aimDirection = new Vector2(0,0);
         if (GetComponent<SpriteRenderer>().flipX)
         {
-            aimDirection = Quaternion.Euler(0, 0, 315f) * Vector2.left;
+            aimDirection = Quaternion.Euler(0, 0, 300f) * Vector2.left;
         }
         else
         {
-            aimDirection = Quaternion.Euler(0, 0, 45f) * Vector2.right;
+            aimDirection = Quaternion.Euler(0, 0, 60f) * Vector2.right;
         }
         
 
