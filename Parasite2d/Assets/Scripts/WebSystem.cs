@@ -104,7 +104,7 @@ public class WebSystem : MonoBehaviour
                     webJoint.distance = Vector2.Distance(playerPosition, hit.point);
                     webJoint.enabled = true;
                     webHingeAnchorSprite.enabled = true;
-                    Debug.Log(webJoint.distance);
+                    //Debug.Log(webJoint.distance);
                 }
             }
        

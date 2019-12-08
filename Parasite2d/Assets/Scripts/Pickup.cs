@@ -28,7 +28,7 @@ public class Pickup : MonoBehaviour
         {
             ray_forward = Physics2D.Raycast(transform.position, Vector2.right);
         }
-        Debug.Log(ray_forward.distance);
+        //Debug.Log(ray_forward.distance);
         if (!picked_up)
         {
             if (child != null && (ray_forward == false || ray_forward.distance >= 1 || ray_forward.rigidbody.gameObject.transform.GetChild(0).gameObject != child))
